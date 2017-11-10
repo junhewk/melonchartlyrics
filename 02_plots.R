@@ -70,6 +70,13 @@ as.tibble(data.frame(table(multiples$year))) %>%
        y = NULL, x = NULL) +
   annotate("text", x = 1990, y = -2, label = "Melon Chart 1964-2016")
 
+# Artists
+
+artists <- as_tibble(data.frame(table(songListLyrics$artist))) %>% 
+  mutate(artist = as.character(Var1)) %>% 
+  select(-Var1) %>% 
+  arrange(-Freq)
+  
 # Careers
 
 keeps <- as_tibble(data.frame(table(songListLyrics$artist))) %>% 
