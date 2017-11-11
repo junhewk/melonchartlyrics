@@ -4,7 +4,7 @@ library(RmecabKo)
 library(stringr)
 library(ggplot2)
 
-songListLyrics <- read_csv("melon_ranking_lyrics_1964-2016.csv")
+songListLyrics <- read.csv("melon_ranking_lyrics_1964-2016.csv", stringsAsFactors = FALSE)
 
 songListLyrics <- songListLyrics %>% unnest_tokens(word, lyric, token = token_words)
 
